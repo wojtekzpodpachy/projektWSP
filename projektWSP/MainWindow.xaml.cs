@@ -14,6 +14,7 @@ namespace projektWSP
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// testowy commit
     public partial class MainWindow : Window
     {
         public TextBox Textbox1 { get; }
