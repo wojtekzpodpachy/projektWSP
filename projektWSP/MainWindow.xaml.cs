@@ -16,9 +16,15 @@ namespace projektWSP
     /// </summary>
     public partial class MainWindow : Window
     {
+        public TextBox Textbox1 { get; }
         public MainWindow()
         {
             InitializeComponent();
+        string s = "Hello, World!";
+            textbox1.Text = s;
+            Textbox1 = textbox1;
         }
+
+       
     }
 }

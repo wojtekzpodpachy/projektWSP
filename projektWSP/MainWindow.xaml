@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:projektWSP"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="grid">
+        <Button Content="Button" HorizontalAlignment="Left" Margin="60,0,0,0" VerticalAlignment="Center" Height="190" Width="174"/>
+        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="237" Margin="313,122,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="274"/>
 
     </Grid>
 </Window>
