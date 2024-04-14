@@ -2,8 +2,9 @@
 using System.Data;
 using System.Windows;
 
-namespace projektWSP
+namespace ProjektWsp
 {
+    /// Major Suchodolski
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
