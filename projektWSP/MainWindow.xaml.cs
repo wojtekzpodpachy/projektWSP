@@ -24,6 +24,7 @@ namespace projektWSP
         string s = "Hello, World!";
             textbox1.Text = s;
             Textbox1 = textbox1;
+            //prztgotowanie pred zad 1
         }
 
        
