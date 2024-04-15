@@ -10,7 +10,7 @@
 
         <StackPanel Grid.Column="0" VerticalAlignment="Top" Margin="10">
             <TextBox Width="100" x:Name="NumberInput"/>
-            <Button Width="100" Content="Generate" Click="GenerateBalls"/>
+            <Button Width="100" Content="Generate" Click="GenerateBalls" Height="434"/>
         </StackPanel>
 
         <Canvas Grid.Column="1" Width="828" Height="457">
@@ -23,7 +23,7 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Ellipse Width="76" Height="76" Fill="Green"/>
+                        <Ellipse Width="76" Height="76" Fill="pink"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
                 <ItemsControl.ItemContainerStyle>
