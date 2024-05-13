@@ -16,7 +16,7 @@ namespace TestProject2
         {
             _mainWindow = new MainWindow();
             _mainWindow.Show();
-           // _textBlock = _mainWindow.FindName("TextBlock1") as TextBlock;
+           
         }
 
         [TearDown]
@@ -28,7 +28,7 @@ namespace TestProject2
         [Test]
         public void TestTextBlockContent()
         {
-            //Assert.AreEqual("Test", _textBlock.Text);
+           
         }
     }
 }
