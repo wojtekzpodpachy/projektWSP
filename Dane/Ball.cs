@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Drawing;
 
 namespace Dane
 {
@@ -15,6 +16,7 @@ namespace Dane
                 {
                     x = value;
                     OnPropertyChanged(nameof(X));
+                    UpdateRect();
                 }
             }
         }
@@ -28,12 +30,28 @@ namespace Dane
                 {
                     y = value;
                     OnPropertyChanged(nameof(Y));
+                    UpdateRect();
                 }
             }
         }
 
         public double VelocityX { get; set; }
         public double VelocityY { get; set; }
+
+        private Rectangle collisionRect;
+        public Rectangle CollisionRect => collisionRect;
+
+        public double Mass = 5.0;
+
+        private void UpdateRect()
+        {
+            collisionRect.X = (int)Math.Round(X);
+            collisionRect.Y = (int)Math.Round(Y);
+        }
+        public Ball()
+        {
+            collisionRect = new Rectangle((int)Math.Round(X), (int)Math.Round(Y), 76, 76);
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
