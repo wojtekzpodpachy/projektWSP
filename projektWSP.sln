@@ -7,13 +7,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project", "ProjektWsp\Proje
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject2", "TestProject2\TestProject2.csproj", "{77A22AB2-A841-4E94-A78B-7EB11C439472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dane", "Dane\Dane.csproj", "{324238D0-7617-4770-9BA5-1B66982002C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dane", "Dane\Dane.csproj", "{324238D0-7617-4770-9BA5-1B66982002C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logika", "Logika\Logika.csproj", "{02CCFF9B-8AA1-4545-86FD-A41F1B6DB884}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logika", "Logika\Logika.csproj", "{02CCFF9B-8AA1-4545-86FD-A41F1B6DB884}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogikaTest", "LogikaTest\LogikaTest.csproj", "{A52EF3B7-1FC8-451F-A7B1-65B28E293B1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogikaTest", "LogikaTest\LogikaTest.csproj", "{A52EF3B7-1FC8-451F-A7B1-65B28E293B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaneTest", "DaneTest\DaneTest.csproj", "{E0541FE1-F760-4C23-9E56-A40CB01E3723}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaneTest", "DaneTest\DaneTest.csproj", "{E0541FE1-F760-4C23-9E56-A40CB01E3723}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F3E2528-1DC5-46C6-86CA-A688A8815289}"
+	ProjectSection(SolutionItems) = preProject
+		ball_log.json = ball_log.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

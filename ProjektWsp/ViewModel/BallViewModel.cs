@@ -11,40 +11,68 @@ using Logika;
 
 namespace Project.ViewModel
 {
-    public class BallViewModel 
+    public class BallViewModel /*: INotifyPropertyChanged*/
     {
-     
+        //public event PropertyChangedEventHandler PropertyChanged;
 
         public ObservableCollection<Ball> Balls { get; set; } = new ObservableCollection<Ball>();
         private BallLogic ballLogic = new BallLogic();
         private DispatcherTimer timer = new DispatcherTimer();
         private Random random = new Random();
+        private Logger logger;
 
         public BallViewModel()
         {
             //InitializeBalls(5);
             timer.Interval = TimeSpan.FromMilliseconds(20);
             timer.Tick += async (s, e) => await MoveBallsAsync2();
+            logger = new Logger("C:\\Users\\wssw\\source\\repos\\projektWSP\\ball_log.json");
             //timer.Start();
         }
 
-        public void InitializeBalls(int numberOfBalls)  //generowanie gejowych kul
+        public void InitializeBalls(int numberOfBalls)
         {
             Balls.Clear();
             for (int i = 0; i < numberOfBalls; i++)
             {
+                /*Balls.Add(new Ball
+                {
+                    X = random.Next(0, 828 - 76), 
+                    Y = random.Next(0, 457 - 76),
+                    VelocityX = 5 * (random.Next(2) == 0 ? 1 : -1),
+                    VelocityY = 5 * (random.Next(2) == 0 ? 1 : -1)
+                });*/
                 Balls.Add(ballLogic.CreateBall());
             }
             if (!timer.IsEnabled)
             {
                 timer.Start();
             }
+            StartLogging();
         }
 
+        /*private void MoveBalls()
+        {
+            foreach (var ball in Balls)
+            {
+                ballLogic.Move(ball);
+            }
+            //OnPropertyChanged(nameof(Balls));// to chyba nie jest potrzebne 
+        }
+        private async Task MoveBallsAsync()
+        {
+            await Task.Run(() =>
+            {
+                foreach (var ball in Balls)
+                {
+                    ballLogic.Move(ball);
+                }
+            });
+        }*/
         private static readonly object collisionLock = new object();
         private async Task MoveBallsAsync2()
         {
-            var moveTasks = new List<Task>();
+           var moveTasks =new List<Task>(); 
             foreach (var ball in Balls)
             {
                 moveTasks.Add(Task.Run(() =>
@@ -52,14 +80,24 @@ namespace Project.ViewModel
                     ballLogic.Move(ball);
                     lock (collisionLock)
                     {
-                        ballLogic.CheckAndHandleCollision(ball, Balls);
+                        ballLogic.CheckAndHandleCollision(ball,Balls);
                     }
                 }));
             }
             await Task.WhenAll(moveTasks);
         }
-
-       
+        private async void StartLogging()
+        {
+            while (true)
+            {
+                await logger.LogAsync(Balls);
+                await Task.Delay(1000); // Log every second
+            }
+        }
+        /* protected virtual void OnPropertyChanged(string propertyName)
+         {
+             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+         }*/
     }
 
 

@@ -31,7 +31,7 @@ namespace Projekt.View
                 }
                 else
                 {
-                    MessageBox.Show("GIVE NUMBER OR SOUL ");
+                    MessageBox.Show("Please enter a valid number");
                 }
             }
         }
