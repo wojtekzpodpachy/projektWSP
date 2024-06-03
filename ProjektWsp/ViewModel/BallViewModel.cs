@@ -24,12 +24,12 @@ namespace Project.ViewModel
 
         public BallViewModel()
         {
-            //InitializeBalls(5);
+      ;
             timer.Interval = TimeSpan.FromMilliseconds(20);
             timer.Tick += async (s, e) => await MoveBallsAsync2();
             loggingTimer.Interval = TimeSpan.FromSeconds(1);
             loggingTimer.Tick += async (s, e) => await LogBallsAsync();
-            logger = new Logger("C:\\Users\\mluza\\source\\repos\\ProjektWsp\\ball_log.json");
+            logger = new Logger("C:\\Users\\wssw\\source\\repos\\projektWSP\\ball_log.json");
             //timer.Start();
         }
 
@@ -38,13 +38,7 @@ namespace Project.ViewModel
             Balls.Clear();
             for (int i = 0; i < numberOfBalls; i++)
             {
-                /*Balls.Add(new Ball
-                {
-                    X = random.Next(0, 828 - 76), 
-                    Y = random.Next(0, 457 - 76),
-                    VelocityX = 5 * (random.Next(2) == 0 ? 1 : -1),
-                    VelocityY = 5 * (random.Next(2) == 0 ? 1 : -1)
-                });*/
+              
                 Balls.Add(ballLogic.CreateBall());
             }
             if (!timer.IsEnabled)
